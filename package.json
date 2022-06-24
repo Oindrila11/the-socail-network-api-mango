@@ -1,0 +1,24 @@
+{
+  "name": "the-socail-network-mango",
+  "version": "1.0.0",
+  "description": "mongodb api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oindrila11/the-socail-network-api-mango.git"
+  },
+  "author": "Oindrila",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Oindrila11/the-socail-network-api-mango/issues"
+  },
+  "homepage": "https://github.com/Oindrila11/the-socail-network-api-mango#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0"
+  }
+}
