@@ -6,7 +6,7 @@ const thoughtController = {
         .populate({
             path: 'reactions', select: "-__v"})
             .select( '-__v')
-    
+            .sort({_id: -1})
         
         .then(dbThoughtData => res.json(dbThoughtData))
         .catch(err => {
@@ -58,7 +58,7 @@ const thoughtController = {
           Thought.findOneAndUpdate({ _id: params.thoughtId }, {$push: {reactions: body}},{new:true})
           .then(dbThoughtData => {
             if (!dbThoughtData) {
-              res.status(404).json({ message: 'No Thought found with this id!' });
+              res.status(404).json({ message: 'No reaction found with this id!' });
               return;
             }
             res.json(dbThoughtData);
@@ -69,7 +69,7 @@ const thoughtController = {
         Thought.findOneAndUpdate({ _id: params.thoughtid }, {$pull: {reactions: {_id: params.reactionId}}}, {new:true})
           .then(dbThoughtData => {
             if (!dbThoughtData) {
-              res.status(404).json({ message: 'No Thought found with this id!' });
+              res.status(404).json({ message: 'No reaction found with this id!' });
               return;
             }
             res.json(dbThoughtData);
